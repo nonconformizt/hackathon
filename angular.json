@@ -45,6 +45,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
+              "src/fontawesome.css",
               "src/styles.css"
             ],
             "scripts": []

@@ -1,0 +1,21 @@
+header {
+    background-color: #7f19e5;
+    height: 50px;
+}
+.logo {
+    font-family: 'Bewlay';
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    font-size: 26px;
+    letter-spacing: 2px;
+    padding-top: 3px;
+}
+
+.header__right-section {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
