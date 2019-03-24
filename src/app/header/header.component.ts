@@ -10,7 +10,7 @@ import { AuthService } from '../auth.service';
 export class HeaderComponent {
   isTransparent : boolean = false;
 
-  constructor(private auth : AuthService,
+  constructor(public auth : AuthService,
               private router : Router) 
   {
     this.router.events.subscribe((val) => {

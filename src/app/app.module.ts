@@ -8,6 +8,7 @@ import { HeaderUserComponent } from './header/header-user/header-user.component'
 import { HomepageComponent } from './homepage/homepage.component';
 import { AuthService } from './auth.service';
 import { HeaderButtonsComponent } from './header/header-buttons/header-buttons.component';
+import { AuthModalComponent } from './auth-modal/auth-modal.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HeaderButtonsComponent } from './header/header-buttons/header-buttons.c
     HeaderComponent,
     HeaderUserComponent,
     HomepageComponent,
-    HeaderButtonsComponent
+    HeaderButtonsComponent,
+    AuthModalComponent
   ],
   imports: [
     BrowserModule,

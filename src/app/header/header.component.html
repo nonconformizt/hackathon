@@ -9,11 +9,11 @@
 
       <div class="col-6 header__right-section">
 
-        <app-header-user *ngIf="auth.isLoggedIn"></app-header-user>
+        <app-header-user *ngIf="auth.loggedIn"></app-header-user>
 
-        <div class="header_btn_container" *ngIf="!auth.isLoggedIn">
-          <button class="btn-round btn-auth">Регистрация</button>
-          <button class="btn-round btn-auth">Вход</button>
+        <div class="header_btn_container" *ngIf="!auth.loggedIn">
+          <button class="btn-round btn-auth" (click)="auth.openRegisterModal()">Регистрация</button>
+          <button class="btn-round btn-auth" (click)="auth.openLoginModal()">Вход</button>
         </div>
 
       </div>
