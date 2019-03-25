@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: 'app-auth-modal',
@@ -13,11 +14,19 @@ export class AuthModalComponent {
     else if ( e.key === "Enter" )
       1;
   }
-
+  
   isOpened: boolean = true;
   message : string = "Are you sure you want to remove this note permanently?";
 
   constructor( public auth : AuthService ) {}
+
+  onLogInSubmit(form : NgForm) {
+    this.auth.login(form.value);
+  }
+
+  onRegisterSubmit(form : NgForm) {
+    this.auth.register(form.value);
+  }
 
 
 }

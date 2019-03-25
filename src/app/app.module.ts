@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +11,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AuthService } from './auth.service';
 import { HeaderButtonsComponent } from './header/header-buttons/header-buttons.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
+
+import { CookieService } from "angular2-cookie/services/cookies.service";
 
 @NgModule({
   declarations: [
@@ -21,9 +25,11 @@ import { AuthModalComponent } from './auth-modal/auth-modal.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

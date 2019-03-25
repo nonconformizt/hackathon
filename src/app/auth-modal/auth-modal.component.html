@@ -2,42 +2,42 @@
   <div class="modal__container">
     <div class="modal__header">{{ auth.modalTitle }}</div>
 
-    <form *ngIf="auth.modalNewAcc" class="modal__form">
+    <form *ngIf="auth.modalNewAcc" #f="ngForm" (ngSubmit)="onRegisterSubmit(f)" class="modal__form">
       
       <div class="group">
         <label for="surname">Ваше имя</label>
-        <input type="text" name="surname" id="surname">
+        <input ngModel type="text" name="first_name" id="surname">
       </div>
 
       <div class="group">
         <label for="surname">Ваша фамилия</label>
-        <input type="text" name="surname" id="surname">
+        <input ngModel type="text" name="last_name" id="surname">
       </div>
 
       <div class="group">
         <label for="email">Адрес электронной почты</label>
-        <input type="email" name="email" id="email">
+        <input ngModel type="email" name="mail" id="email">
       </div>
 
       <div class="group">
         <label for="password">Придумайте пароль</label>
-        <input type="password" name="password" id="password">
+        <input ngModel type="password" name="password" id="password">
       </div>
 
       <button class="submit" type="submit">Создать аккаунт <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg></button>
 
     </form>
 
-    <form *ngIf="!auth.modalNewAcc" class="modal__form">
+    <form *ngIf="!auth.modalNewAcc" #f="ngForm" (ngSubmit)="onLogInSubmit(f)" class="modal__form">
 
         <div class="group">
           <label for="email">Адрес электронной почты</label>
-          <input type="email" name="email" id="email">
+          <input ngModel type="email" name="mail" id="email">
         </div>
   
         <div class="group">
           <label for="password">Пароль</label>
-          <input type="password" name="password" id="password">
+          <input ngModel type="password" name="password" id="password">
         </div>
   
         <button class="submit" type="submit">Войти <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg></button>
