@@ -10,3 +10,122 @@
     margin-top: -50px;
     z-index: -10;
 }
+
+.hero {
+    margin-top: 130px;
+}
+
+.big_logo {
+    text-align: center;
+    font: 140px 'Bewlay';
+    letter-spacing: 5px;
+    color: #fff;
+}
+
+.slogan {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    margin-top: -20px;
+}
+
+.find_tickets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.find_tickets input {
+    border: 1.5px solid white;
+    border-right: none;
+    border-left: none;
+    background-color: transparent;    
+    padding: 12px 8px 12px 0;
+    font-size: 20px;
+    width: 240px;
+    outline: none;
+    color: #fff;
+}
+
+.find_tickets input::placeholder {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.find_tickets .inp_container {
+    margin-right: 7px;
+    margin-left: 7px;
+    position: relative;
+}
+
+.find_tickets .inp_container:first-child input {
+    border-radius: 12px 0 0 12px;
+    border-left: 1.5px solid white;
+    padding-left: 10px;
+}
+
+.find_tickets .inp_container:last-child input{
+    border-radius: 0 12px 12px 0;
+    border-right: 1.5px solid white;
+}
+
+.find_tickets input:focus::placeholder {
+    color: transparent;
+}
+
+.find_tickets i.fal {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.9);
+    right: 7px;
+    top: 13px;
+    font-size: 23px;
+}
+
+.find_tickets .inp_container:last-child i.fal{
+    right: 15px;
+}
+
+ /* BUTTON */
+
+
+button.go {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto 0;
+    text-decoration: none;
+    outline: none;
+    padding: 10px 30px;
+    position: relative;
+    border: 2px solid #fff;
+    color: #fff;
+    transition: .4s;
+    background: transparent;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+button.go i{
+    margin-left: 10px;
+    color: #fff;
+    font-size: 24px;
+}
+button.go:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: .4s;
+}
+button.go:hover:after {
+    border-color: #fff;
+    width: calc(100% - 15px);
+    height: calc(100% + 20px);
+}
