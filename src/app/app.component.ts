@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
-import { CookieService } from "angular2-cookie/services/cookies.service";
+import { CookieService } from "ngx-cookie-service";
 
 @Component({
   selector: 'app-root',
@@ -18,7 +18,7 @@ export class AppComponent implements OnInit{
     if( !(this.auth.token = this.cookie.get("token")) ) 
     {
       this.auth.token = (Math.round(Math.random()*10000)*Date.now()).toString();
-      this.cookie.put("token", this.auth.token);
+      this.cookie.set("token", this.auth.token);
       console.log('newToken');
     }
   }

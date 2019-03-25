@@ -11,9 +11,11 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { HeaderButtonsComponent } from './header/header-buttons/header-buttons.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
 
-import { CookieService } from "angular2-cookie/services/cookies.service";
+import { CookieService } from "ngx-cookie-service";
 import { AuthService } from './auth.service';
 import { UserDataService } from './userdata.service';
+import { TicketPageComponent } from './tickets/ticket-page/ticket-page.component';
+import { TicketsSearchComponent } from './tickets/tickets-search/tickets-search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { UserDataService } from './userdata.service';
     HeaderUserComponent,
     HomepageComponent,
     HeaderButtonsComponent,
-    AuthModalComponent
+    AuthModalComponent,
+    TicketsSearchComponent,
+    TicketPageComponent
   ],
   imports: [
     BrowserModule,

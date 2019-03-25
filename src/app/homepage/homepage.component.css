@@ -13,6 +13,10 @@
 
 .hero {
     margin-top: 130px;
+    -ms-user-select: none; 
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    user-select: none;
 }
 
 .big_logo {
@@ -104,6 +108,7 @@ button.go {
     font-size: 20px;
     text-transform: uppercase;
     border-radius: 10px;
+    cursor: pointer;
 }
 button.go i{
     margin-left: 10px;
