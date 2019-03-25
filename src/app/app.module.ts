@@ -8,11 +8,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HeaderUserComponent } from './header/header-user/header-user.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { AuthService } from './auth.service';
 import { HeaderButtonsComponent } from './header/header-buttons/header-buttons.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
 
 import { CookieService } from "angular2-cookie/services/cookies.service";
+import { AuthService } from './auth.service';
+import { UserDataService } from './userdata.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,11 @@ import { CookieService } from "angular2-cookie/services/cookies.service";
     HttpClientModule,
     FormsModule
   ],
-  providers: [AuthService, CookieService],
+  providers: [
+    AuthService, 
+    CookieService, 
+    UserDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

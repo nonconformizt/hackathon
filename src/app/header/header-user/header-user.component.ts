@@ -1,16 +1,30 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { UserDataService } from '../../userdata.service';
 
 @Component({
   selector: 'app-header-user',
   templateUrl: './header-user.component.html',
   styleUrls: ['./header-user.component.css']
 })
-export class HeaderUserComponent {
+export class HeaderUserComponent implements OnInit {
   dropdownOpened : boolean = false;
+
+  name : string = '';
 
   @HostListener('window:click', ['$event']) click(event){
     if( !this.isDropdown(event.target) && this.dropdownOpened )
       this.toggleDropdown();
+  }
+
+  constructor( private userData : UserDataService ) {}
+
+  ngOnInit() {
+    
+    this.name = this.userData.first_name + ' ' + this.userData.last_name;
+
+    this.userData.changed.subscribe(() => {
+      this.name = this.userData.first_name + ' ' + this.userData.last_name;
+    })
   }
 
   isDropdown (target : HTMLElement) {

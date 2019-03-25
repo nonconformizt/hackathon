@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { CookieService } from "angular2-cookie/core";
+import { UserDataService } from './userdata.service';
+
 
 @Injectable()
 export class AuthService {
@@ -14,6 +17,7 @@ export class AuthService {
   host: string = "http://192.168.43.102";
 
   constructor( private http: HttpClient,
+               private userdata: UserDataService,
                private cookie: CookieService ) { }
 
   openRegisterModal() {
@@ -33,38 +37,55 @@ export class AuthService {
   }
 
   login(userData : any) {
-    const sesskey = this.cookie.get('token');
-    console.log("Login: " + sesskey);
-    console.log(userData);
-    
-
-    this.http.post('http://192.168.43.102/user/auth/?sesskey=' + sesskey, userData)
-        .subscribe(
-          (responce : any) => {
-            console.log(responce);
-            if( responce.response_code == 1 ) {
-              this.loggedIn = true;
-              this.modalOpened = false;
-            }
-          },
-          (error) => {
-            console.warn(error);
-          }
-        );
+    this.sendRequest("post","user", "auth", userData, 
+      (response) => {
+        if( response.response_code == 1 || response.response_comment == "Вы уже авторизованы" ) {
+          this.loggedIn = true;
+          this.modalOpened = false;
+          this.fetchUserData();
+        }
+      }
+    );
   }
 
   register(newUserData : any) {
-    const sesskey = this.cookie.get('token');
-    console.log(sesskey);
-    console.log(newUserData);
 
-    this.http.put('http://192.168.43.102/user/reg/?sesskey=' + sesskey, newUserData)
+    this.sendRequest("post", "user", "reg", newUserData, 
+    (response) => {
+      if( response.response_code == 1 || response.response_comment == "Вы уже авторизованы") {
+        this.loggedIn = true;
+        this.modalOpened = false;
+      }
+    });
+
+  }
+
+  fetchUserData() {
+    this.sendRequest("get", "user", "selfdata", {}, 
+      (response) => {
+        if( response.response_code === 1 || response.response_comment == "Вы уже авторизованы"  ) {  
+
+          this.userdata.change({
+            first_name : response.user_data.first_name,
+            last_name : response.user_data.last_name
+          });
+
+        }
+      }
+    );
+  }
+
+  sendRequest(method : string, module : string, action : string, data : any, callback? : Function)
+  {
+    const sesskey = this.cookie.get('token');
+    this.http[method]( this.host + '/' + module + '/' + action + '/?sesskey=' + sesskey, data)
         .subscribe(
-          (responce) => {
-            console.log(responce);
+          (response : any) => {
+            console.log(response);
+            callback(response);
           },
           (error) => {
-            console.warn(error);
+            console.log(error);
           }
         );
   }
