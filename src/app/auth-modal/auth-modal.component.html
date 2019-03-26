@@ -5,22 +5,22 @@
     <form *ngIf="auth.modalNewAcc" #f="ngForm" (ngSubmit)="onRegisterSubmit(f)" class="modal__form">
       
       <div class="group">
-        <label for="surname">Ваше имя</label>
+        <label class="label" for="surname">Ваше имя</label>
         <input ngModel class="input" type="text" name="first_name" id="surname">
       </div>
 
       <div class="group">
-        <label for="surname">Ваша фамилия</label>
+        <label class="label" for="surname">Ваша фамилия</label>
         <input ngModel class="input" type="text" name="last_name" id="surname">
       </div>
 
       <div class="group">
-        <label for="email">Адрес электронной почты</label>
+        <label class="label" for="email">Адрес электронной почты</label>
         <input ngModel class="input" type="email" name="mail" id="email">
       </div>
 
       <div class="group">
-        <label for="password">Придумайте пароль</label>
+        <label class="label" for="password">Придумайте пароль</label>
         <input ngModel class="input" type="password" name="password" id="password">
       </div>
 
@@ -31,12 +31,12 @@
     <form *ngIf="!auth.modalNewAcc" #f="ngForm" (ngSubmit)="onLogInSubmit(f)" class="modal__form">
 
         <div class="group">
-          <label for="email">Адрес электронной почты</label>
+          <label class="label" for="email">Адрес электронной почты</label>
           <input ngModel class="input" type="email" name="mail" id="email">
         </div>
   
         <div class="group">
-          <label for="password">Пароль</label>
+          <label class="label" for="password">Пароль</label>
           <input ngModel class="input" type="password" name="password" id="password">
         </div>
   

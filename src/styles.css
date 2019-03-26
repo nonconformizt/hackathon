@@ -68,6 +68,13 @@ table {
   border-bottom: 2px solid #8c39f8;
 }
 
+.label {
+  display: block;
+  color: #404040;
+  font-size: 14px;
+  margin: 17px 0 5px;
+}
+
 
 
 /* logo font */

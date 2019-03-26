@@ -36,13 +36,7 @@
     border-radius: 16px;
 }
 
-label {
-    display: block;
-    /* color: rgba(95, 0, 189, 0.96); */
-    color: #404040;
-    font-size: 14px;
-    margin: 17px 0 5px;
-}
+
 
 .submit {
     border: 2px solid #a759c0;

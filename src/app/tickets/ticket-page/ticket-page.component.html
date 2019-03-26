@@ -78,19 +78,81 @@
             <i class="fal fa-check-circle"></i>
           </div>
         </div>
-        <div class="col-4 place">
+        <div class="col-3 place">
           <span class="planet">Кеплер 438b</span>
           <span class="port">Космопорт Арб</span>
+        </div>
+        <div class="col-3">
+          <div class="total">
+             Всего: <span>1234 $</span>
+          </div>
+        </div>
+        <div class="col-3">
+          <button class="further">
+            <div (click)="goToForm()" class="caption">
+              Перейти к оформлению
+            </div>
+            <i class="fal fa-angle-double-down"></i>
+          </button>
         </div>
       </div>
 
       <form>
-        <div class="form_header">
+        <div class="form_header" id="form">
           Заполните свои данные
         </div>
-        <div class="form_body">
-          
+        <div class="form_body container">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="last_name" class="label">Фамилия:</label>
+              <input type="text" name="last_name" id="last_name" class="input">
+            </div>
+            <div class="col-md-6">
+              <label for="first_name" class="label">Имя:</label>
+              <input type="text" name="first_name" id="first_name" class="input">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="last_name" class="label">Дата рождения:</label>
+              <input type="text" name="last_name" id="last_name" class="input">
+            </div>
+            <div class="col-md-6">
+              <label for="first_name" class="label">Пол:</label>
+              <div class="radio">
+                <p>
+                  <input name="gender" type="radio" id="male" value="male">
+                  <label for="male"> Мужской</label>
+                </p>
+                <p>
+                  <input name="gender" type="radio" id="female" value="female">
+                  <label for="female"> Женский</label>
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
+
+        <div class="row">
+          <div class="col-3">
+            <button class="back further">
+              <i class="fal fa-angle-double-left"></i>
+              <div class="caption">
+                Назад
+              </div>
+            </button>
+          </div>
+          <div class="col-3 offset-6">
+            <button class="further">
+              <div class="caption">
+                Заказать
+              </div>
+              <i class="fal fa-angle-double-right"></i>
+            </button>
+          </div>
+        </div>
+
       </form>
 
 

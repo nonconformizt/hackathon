@@ -137,3 +137,126 @@ button:hover {
     padding: 3px 0;
     font-size: 15px;
 }
+
+
+/* FORM */
+
+.form_header {
+    font: 26px 'Bewlay';
+    letter-spacing: 1.5px;
+    text-align: center;
+    background-color: #683aa3;
+    border-radius: 16px 16px 0 0;
+    color: #fff;
+    padding: 8px 0 24px;
+    margin-bottom: -16px;
+    margin-top: 60px;
+}
+
+.form_body {
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 0;  
+    padding-bottom: 30px;
+}
+/* *************** */
+form {
+    margin-bottom: 200px;
+}
+/* *************** */
+.radio {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    color: #404040;
+    font-size: 14px;
+}
+.radio p {
+    padding-right: 20px;
+    padding-top: 4px;
+}
+.radio label {
+    cursor: pointer;
+}
+
+
+.total {
+    background: transparent;
+    border: 1px solid #683AA3;
+    border-radius: 8px;
+    padding: 9px 0 6px;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Noto Sans';
+    color: #404040;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    margin-bottom: 5px;
+    transition: 300ms;
+}
+.total span {
+    font-size: 24px;
+    color: #683AA3;
+    padding-left: 5px;
+}
+
+.further {
+    background: transparent;
+    border: 1px solid #683AA3;
+    border-radius: 8px;
+    padding: 9px;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: 'Noto Sans';
+    background-color: #683AA3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 55px;
+    margin-bottom: 5px;
+    color: #fff;
+    width: 100%;
+    transition: 300ms;
+}
+.further .caption, .further i {
+    color: #fff;
+    width: 80%;
+}
+.further i {
+    width: 30px;
+    text-align: left;
+    width: 20%;
+    font-size: 30px;
+}
+
+form .further {
+    margin-top: 20px;
+}
+
+/* BACK */
+
+.further.back {
+    background-color: #ddd;
+    border-color: #ddd;
+}
+.further.back i, .further.back .caption {
+    color: #fff;
+    text-align: center;
+}
+
+
+.further.back:hover {
+    background-color: #ccc;
+    border-color: #ccc;
+}
+.further.back:hover i, 
+.further.back:hover .caption {
+    color: #fff;
+    text-align: center;
+}

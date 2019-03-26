@@ -10,6 +10,12 @@ export class TicketPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  goToForm() {    
+    var form = document.getElementById("form");
+    form.scrollIntoView();
   }
 
 }
