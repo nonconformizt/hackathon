@@ -20,9 +20,7 @@
     align-items: center;
     justify-content: center;
 }
-.date {
 
-}
 .date .time {
     font-size: 31px;
     font-weight: bold;
@@ -34,14 +32,13 @@
     color: #984BC6;
 }
 .info {
-    /* justify-content: space-around; */
     font-size: 14px;
 }
 .classes {
     flex: 5;
 }
 
-button.order {
+a.order {
     background: transparent;
     border: 2px solid #683AA3;
     border-radius: 8px;
@@ -57,20 +54,21 @@ button.order {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    text-decoration: none;
 }
-button.order i {
+a.order i {
     color: #683AA3;
     font-size: 18px;
     padding-left: 10px;
     transition: 0.3s;
 }
 
-button.order:hover{
+a.order:hover{
     background-color: #683AA3;
     color: #fff;
     transition: 0.3s;
 }
-button.order:hover i {
+a.order:hover i {
     color: #fff;
 }
 
@@ -104,6 +102,7 @@ button.order:hover i {
 .class .remain, .class .name, .class .price {
     width: 30%;
     font-size: 14px;
+    color: #333333;
 }
 .class .name {
     width: 40%;
