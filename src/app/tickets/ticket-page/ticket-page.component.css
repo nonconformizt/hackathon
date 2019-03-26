@@ -22,8 +22,15 @@
     transform: rotate(-30deg);
 }
 
-.up .dot i {
-    transform: rotate(30deg);
+.trip_destination .dot i {
+    transform: rotate(0deg);    
+}
+
+.divisor {
+    height: 80px;
+    background-color: #a759c0;
+    width: 3px;
+    margin: 0 28px;
 }
 
 .date {
@@ -63,4 +70,70 @@
     font-size: 15px;
     padding-top: 3px;
     text-transform: uppercase;
+}
+
+.rocket .name, .class, .seat {
+    font-size: 17px;
+    color: #a759c0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.rocket {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 60px;
+    padding: 0;
+}
+
+.buttons {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button.choose_seat, button.choose_class {
+    background: transparent;
+    border: 1.5px solid #683AA3;
+    background-color: #683AA3;
+    border-radius: 8px;
+    height: 26px;
+    font-size: 16px;
+    font-family: 'Noto Sans';
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+    width: 90%;
+    margin: 0 auto;
+}
+
+button i {
+    color: #fff;
+    font-size: 20px;
+    padding-left: 8px;
+}
+
+button:hover {
+    border: 1.5px solid #8854cc;
+    background-color: #8854cc;
+}
+
+.flight_time {
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flight_time span {
+    color: #683AA3;
+    padding: 3px 0;
+    font-size: 15px;
 }

@@ -13,6 +13,7 @@
 
     display: flex;
 }
+
 .date, .info, .classes {
     flex: 2;
     display: flex;
@@ -27,13 +28,16 @@
     margin: 10px 0;
     color: #661E88;
 }
+
 .date .day, .date .port {
     font-size: 15px;
     color: #984BC6;
 }
+
 .info {
     font-size: 14px;
 }
+
 .classes {
     flex: 5;
 }

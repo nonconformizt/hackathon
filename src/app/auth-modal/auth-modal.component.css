@@ -44,23 +44,6 @@ label {
     margin: 17px 0 5px;
 }
 
-input {
-    display: block;
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid #8c39f833;
-    outline: none;
-    padding: 7px 0;
-    font-size: 17px;
-    border-radius: 0 0 2px 2px;
-}
-input#password {
-    letter-spacing: 6px;
-}
-input:focus {
-    border-bottom: 2px solid #8c39f8;
-}
-
 .submit {
     border: 2px solid #a759c0;
     background-color: transparent;
