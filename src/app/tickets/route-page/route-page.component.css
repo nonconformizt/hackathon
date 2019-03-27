@@ -1,0 +1,262 @@
+.container {
+    margin-top: 50px;
+}
+
+.trip_step {
+    align-items: center;
+}
+
+.dot {
+    background-color: #a759c0;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot i {
+    color: #ffffff;
+    font-size: 30px;
+    transform: rotate(-30deg);
+}
+
+i.trip_destination {
+    transform: rotate(0deg) !important;    
+}
+
+.divisor {
+    height: 80px;
+    background-color: #a759c0;
+    width: 3px;
+    margin: 0 28px;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.time {
+    font-size: 31px;
+    font-weight: bold;
+    margin: 0 0 3px;
+    color: #661E88;
+    text-align: right;
+}
+.day {
+    text-align: right;
+    font-size: 15px;
+    color: #984BC6;
+}
+
+.place {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 27px;
+}
+
+.planet {
+    font-size: 30px;
+    font-family: 'Bewlay';
+    letter-spacing: 2px;
+}
+
+.port {
+    font-size: 15px;
+    padding-top: 3px;
+    text-transform: uppercase;
+}
+
+.rocket .name, .class, .seat {
+    font-size: 17px;
+    color: #a759c0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.rocket {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 60px;
+    padding: 0;
+}
+
+.buttons {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button.choose_seat, button.choose_class {
+    background: transparent;
+    border: 1.5px solid #683AA3;
+    background-color: #683AA3;
+    border-radius: 8px;
+    height: 50px;
+    font-size: 16px;
+    font-family: 'Noto Sans';
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+    width: 90%;
+    margin: 0 auto;
+}
+
+button i {
+    color: #fff;
+    font-size: 20px;
+    padding-left: 8px;
+}
+
+button:hover {
+    border: 1.5px solid #8854cc;
+    background-color: #8854cc;
+}
+
+.flight_time {
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flight_time span {
+    color: #683AA3;
+    padding: 3px 0;
+    font-size: 15px;
+}
+
+
+/* FORM */
+
+.form_header {
+    font: 26px 'Bewlay';
+    letter-spacing: 1.5px;
+    text-align: center;
+    background-color: #683aa3;
+    border-radius: 16px 16px 0 0;
+    color: #fff;
+    padding: 8px 0 24px;
+    margin-bottom: -16px;
+    margin-top: 60px;
+}
+
+.form_body {
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 0;  
+    padding-bottom: 30px;
+}
+/* *************** */
+form {
+    margin-bottom: 200px;
+}
+/* *************** */
+.radio {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    color: #404040;
+    font-size: 14px;
+}
+.radio p {
+    padding-right: 20px;
+    padding-top: 4px;
+}
+.radio label {
+    cursor: pointer;
+}
+
+
+.total {
+    background: transparent;
+    border: 1px solid #683AA3;
+    border-radius: 8px;
+    padding: 9px 0 6px;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Noto Sans';
+    color: #404040;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    margin-bottom: 5px;
+    transition: 300ms;
+}
+.total span {
+    font-size: 24px;
+    color: #683AA3;
+    padding-left: 5px;
+}
+
+.further {
+    background: transparent;
+    border: 1px solid #683AA3;
+    border-radius: 8px;
+    padding: 9px;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: 'Noto Sans';
+    background-color: #683AA3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 55px;
+    margin-bottom: 5px;
+    color: #fff;
+    width: 100%;
+    transition: 300ms;
+}
+.further .caption, .further i {
+    color: #fff;
+    width: 80%;
+}
+.further i {
+    width: 30px;
+    text-align: left;
+    width: 20%;
+    font-size: 30px;
+}
+
+form .further {
+    margin-top: 20px;
+}
+
+/* BACK */
+
+.further.back {
+    background-color: #ddd;
+    border-color: #ddd;
+}
+.further.back i, .further.back .caption {
+    color: #fff;
+    text-align: center;
+}
+
+
+.further.back:hover {
+    background-color: #ccc;
+    border-color: #ccc;
+}
+.further.back:hover i, 
+.further.back:hover .caption {
+    color: #fff;
+    text-align: center;
+}
