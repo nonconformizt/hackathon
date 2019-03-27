@@ -14,8 +14,8 @@ export class AuthService {
 
   token : string;
 
-  // host: string = "http://ag.p-host.in";
-  host: string = "http://192.168.1.13";
+  host: string = "http://ag.p-host.in";
+  // host: string = "http://192.168.1.13";
 
   constructor( private http: HttpClient,
                private userdata: UserDataService,
@@ -50,7 +50,6 @@ export class AuthService {
   }
 
   register(newUserData : any) {
-
     this.sendRequest("post", "user", "reg", newUserData, 
     (response) => {
       if( response.response_code == 1 || response.response_comment == "Вы уже авторизованы") {
@@ -65,12 +64,11 @@ export class AuthService {
     this.sendRequest("get", "user", "selfdata", {}, 
       (response) => {
         if( response.response_code === 1 || response.response_comment == "Вы уже авторизованы"  ) {  
-
+          this.loggedIn = true;
           this.userdata.change({
             first_name : response.user_data.first_name,
             last_name : response.user_data.last_name
           });
-
         }
       }
     );
@@ -78,12 +76,6 @@ export class AuthService {
 
   sendRequest(method : string, module : string, action : string, data : any, callback? : Function)
   {
-    // const config = {
-    //   headers: new HttpHeaders({
-    //     'Content-Type':  'application/json',
-    //     'Accept':  'application/json'
-    //   })
-    // };
     console.log(data);
 
     const sesskey = this.cookie.get('token');

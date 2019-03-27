@@ -26,14 +26,14 @@ export class RoutePageComponent implements OnInit {
               private userdata : UserDataService) {
                 
      this.flightID = this.route.snapshot.params['id'];
-
-     if ( this.userdata.first_name !== "default" ) {
-       this.first_name = this.userdata.translit(this.userdata.first_name).toUpperCase();
-       this.last_name = this.userdata.translit(this.userdata.last_name).toUpperCase();
-     }
   }
 
   ngOnInit() {
+    if ( this.userdata.first_name !== "default" ) 
+      this.fillForm();
+
+    this.userdata.changed.subscribe(() => this.fillForm());
+
     this.auth.sendRequest('put', 'flight', 'flight', {"flight_id" : this.flightID}, (resp : any) => { 
       this.flight = resp.flight_data; 
       this.way = resp.flight_data.way;
@@ -41,13 +41,17 @@ export class RoutePageComponent implements OnInit {
   }
 
   goToForm() {    
-    var form = document.getElementById("form");
-    form.scrollIntoView();
+    document.getElementById("form").scrollIntoView();
   }
 
   onResult(seat : number) {
     this.seat = seat;
     this.chooseSeatOpened = false;
+  }
+
+  fillForm() {    
+    this.first_name = this.userdata.translit(this.userdata.first_name).toUpperCase();
+    this.last_name = this.userdata.translit(this.userdata.last_name).toUpperCase();
   }
 
 }

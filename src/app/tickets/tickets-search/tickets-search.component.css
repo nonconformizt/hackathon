@@ -114,3 +114,7 @@ a.order:hover i {
 .class .price {
     text-align: right;
 }
+
+.ticket_outer:last-child {
+    margin-bottom: 100px;
+}

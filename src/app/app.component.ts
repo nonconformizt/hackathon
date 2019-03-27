@@ -20,5 +20,8 @@ export class AppComponent implements OnInit{
       this.auth.token = (Math.round(Math.random()*10000)*Date.now()).toString();
       this.cookie.set("token", this.auth.token);
     }
+    else {
+      this.auth.fetchUserData();
+    }
   }
 }

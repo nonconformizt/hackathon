@@ -1,4 +1,8 @@
-<app-choose-seat *ngIf="chooseSeatOpened" (close)="chooseSeatOpened = false" (result)="onResult($event)">
+<app-choose-seat 
+  *ngIf="chooseSeatOpened" 
+  (close)="chooseSeatOpened = false" 
+  (result)="onResult($event)" 
+  [seatsNumber]="150">
 </app-choose-seat>
 
 <div class="container">

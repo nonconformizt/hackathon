@@ -1,211 +1,60 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-10 offset-md-1">
+
+    <div *ngFor="let ticket of tickets" class="col-md-10 offset-md-1 ticket_outer">
       <div class="ticket_container">
         <div class="ticket row">
           <div class="date departure">
-            <div class="day">1 апреля</div>
-            <div class="time">23:30</div>
-            <div class="port">Земля, Байконур</div>
+            <div class="day">{{ ticket.departure.date }}</div>
+            <div class="time"> {{ ticket.departure.hours }}:{{ ticket.departure.min }}
+            </div>
+            <div class="port">
+              {{ ticket.way[0].planet_name }}
+              ,
+              {{ ticket.way[0].port_name.port_name }}
+            </div>
           </div>
           <div class="info">
             <div class="duration">2 д., 16 час., 18 мин.</div>
             <div class="arrow">
               <img src="/assets/images/design/triangle.png">
             </div>
-            <div class="ship">Falcon Ultra-heavy</div>
+            <div class="ship">Корабль: {{ ticket.spaceship.model_name }}</div>
           </div>
           <div class="date arrival">
-            <div class="day">4 апреля</div>
-            <div class="time">15:48</div>
-            <div class="port">Кеплер 438b, Арб</div>
+            <div class="day">{{ ticket.arrival.date }}</div>
+            <div class="time">
+              {{ ticket.arrival.hours }}:{{ ticket.arrival.min }}
+            </div>
+            <div class="port">
+              {{ ticket.way[ticket.way.length - 1].planet_name }},
+              {{ ticket.way[ticket.way.length - 1].port_name.port_name }}
+            </div>
           </div>
           <div class="classes">
             <div class="class">
               <div class="name">Эконом</div>
-              <div class="remain">Осталось: 1473</div>
-              <div class="price">154 $</div>
+              <div class="remain">Осталось: {{ ticket.spaceship.free_places }}</div>
+              <div class="price">{{ ticket.price }} $</div>
             </div>
             <div class="class">
               <div class="name">Эконом+</div>
-              <div class="remain">Осталось: 1742</div>
-              <div class="price">154 $</div>
+              <div class="remain">Осталось: {{ ticket.spaceship.free_places }}</div>
+              <div class="price">{{ ticket.price }} $</div>
             </div>
             <div class="class">
               <div class="name">Бизнес</div>
-              <div class="remain">Осталось: 130</div>
-              <div class="price">154 $</div>
+              <div class="remain">Осталось: {{ ticket.spaceship.free_places }}</div>
+              <div class="price">{{ ticket.price }} $</div>
             </div>
           </div>
         </div>
         <div class="btn_container row">
-          <a routerLink="1" class="order col-md-3 offset-md-9 col-12">Заказать <i class="fal fa-space-shuttle"></i></a>
+          <a [routerLink]="['/', 'route', ticket.flight_id]" class="order col-md-3 offset-md-9 col-12">Заказать <i
+              class="fal fa-space-shuttle"></i></a>
         </div>
       </div>
-      <div class="ticket_container">
-        <div class="ticket row">
-          <div class="date departure">
-            <div class="day">1 апреля</div>
-            <div class="time">23:30</div>
-            <div class="port">Земля, Байконур</div>
-          </div>
-          <div class="info">
-            <div class="duration">2 д., 16 час., 18 мин.</div>
-            <div class="arrow">
-              <img src="/assets/images/design/triangle.png">
-            </div>
-            <div class="ship">Falcon Ultra-heavy</div>
-          </div>
-          <div class="date arrival">
-            <div class="day">4 апреля</div>
-            <div class="time">15:48</div>
-            <div class="port">Кеплер 438b, Арб</div>
-          </div>
-          <div class="classes">
-            <div class="class">
-              <div class="name">Эконом</div>
-              <div class="remain">Осталось: 1473</div>
-              <div class="price">154 $</div>
-            </div>
-            <div class="class">
-              <div class="name">Эконом+</div>
-              <div class="remain">Осталось: 1742</div>
-              <div class="price">154 $</div>
-            </div>
-            <div class="class">
-              <div class="name">Бизнес</div>
-              <div class="remain">Осталось: 130</div>
-              <div class="price">154 $</div>
-            </div>
-          </div>
-        </div>
-        <div class="btn_container row">
-          <a class="order col-md-3 offset-md-9 col-12">Заказать <i class="fal fa-space-shuttle"></i></a>
-        </div>
-      </div>
-      <div class="ticket_container">
-        <div class="ticket row">
-          <div class="date departure">
-            <div class="day">1 апреля</div>
-            <div class="time">23:30</div>
-            <div class="port">Земля, Байконур</div>
-          </div>
-          <div class="info">
-            <div class="duration">2 д., 16 час., 18 мин.</div>
-            <div class="arrow">
-              <img src="/assets/images/design/triangle.png">
-            </div>
-            <div class="ship">Falcon Ultra-heavy</div>
-          </div>
-          <div class="date arrival">
-            <div class="day">4 апреля</div>
-            <div class="time">15:48</div>
-            <div class="port">Кеплер 438b, Арб</div>
-          </div>
-          <div class="classes">
-            <div class="class">
-              <div class="name">Эконом</div>
-              <div class="remain">Осталось: 1473</div>
-              <div class="price">154 $</div>
-            </div>
-            <div class="class">
-              <div class="name">Эконом+</div>
-              <div class="remain">Осталось: 1742</div>
-              <div class="price">154 $</div>
-            </div>
-            <div class="class">
-              <div class="name">Бизнес</div>
-              <div class="remain">Осталось: 130</div>
-              <div class="price">154 $</div>
-            </div>
-          </div>
-        </div>
-        <div class="btn_container row">
-          <a class="order col-md-3 offset-md-9 col-12">Заказать <i class="fal fa-space-shuttle"></i></a>
-        </div>
-      </div>
-      <div class="ticket_container">
-        <div class="ticket row">
-          <div class="date departure">
-            <div class="day">1 апреля</div>
-            <div class="time">23:30</div>
-            <div class="port">Земля, Байконур</div>
-          </div>
-          <div class="info">
-            <div class="duration">2 д., 16 час., 18 мин.</div>
-            <div class="arrow">
-              <img src="/assets/images/design/triangle.png">
-            </div>
-            <div class="ship">Falcon Ultra-heavy</div>
-          </div>
-          <div class="date arrival">
-            <div class="day">4 апреля</div>
-            <div class="time">15:48</div>
-            <div class="port">Кеплер 438b, Арб</div>
-          </div>
-          <div class="classes">
-            <div class="class">
-              <div class="name">Эконом</div>
-              <div class="remain">Осталось: 1473</div>
-              <div class="price">154 $</div>
-            </div>
-            <div class="class">
-              <div class="name">Эконом+</div>
-              <div class="remain">Осталось: 1742</div>
-              <div class="price">154 $</div>
-            </div>
-            <div class="class">
-              <div class="name">Бизнес</div>
-              <div class="remain">Осталось: 130</div>
-              <div class="price">154 $</div>
-            </div>
-          </div>
-        </div>
-        <div class="btn_container row">
-          <a class="order col-md-3 offset-md-9 col-12">Заказать <i class="fal fa-space-shuttle"></i></a>
-        </div>
-      </div>
-      <div class="ticket_container">
-        <div class="ticket row">
-          <div class="date departure">
-            <div class="day">1 апреля</div>
-            <div class="time">23:30</div>
-            <div class="port">Земля, Байконур</div>
-          </div>
-          <div class="info">
-            <div class="duration">2 д., 16 час., 18 мин.</div>
-            <div class="arrow">
-              <img src="/assets/images/design/triangle.png">
-            </div>
-            <div class="ship">Falcon Ultra-heavy</div>
-          </div>
-          <div class="date arrival">
-            <div class="day">4 апреля</div>
-            <div class="time">15:48</div>
-            <div class="port">Кеплер 438b, Арб</div>
-          </div>
-          <div class="classes">
-            <div class="class">
-              <div class="name">Эконом</div>
-              <div class="remain">Осталось: 1473</div>
-              <div class="price">154 $</div>
-            </div>
-            <div class="class">
-              <div class="name">Эконом+</div>
-              <div class="remain">Осталось: 1742</div>
-              <div class="price">154 $</div>
-            </div>
-            <div class="class">
-              <div class="name">Бизнес</div>
-              <div class="remain">Осталось: 130</div>
-              <div class="price">154 $</div>
-            </div>
-          </div>
-        </div>
-        <div class="btn_container row">
-          <a class="order col-md-3 offset-md-9 col-12">Заказать <i class="fal fa-space-shuttle"></i></a>
-        </div>
-      </div>
+
     </div>
   </div>
 </div>

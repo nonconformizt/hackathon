@@ -2,8 +2,8 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class UserDataService {
-    first_name = "Корж";
-    last_name = "Богдан";
+    first_name = "default";
+    last_name = "default";
 
     @Output() changed: EventEmitter<any> = new EventEmitter();
 

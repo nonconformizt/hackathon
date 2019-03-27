@@ -1,11 +1,11 @@
-import { Component, HostListener, EventEmitter, Output } from '@angular/core';
+import { Component, HostListener, EventEmitter, Output, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-choose-seat',
   templateUrl: './choose-seat.component.html',
   styleUrls: ['./choose-seat.component.css']
 })
-export class ChooseSeatComponent {
+export class ChooseSeatComponent implements OnInit {
   @HostListener('window:keydown', ['$event']) click(e : KeyboardEvent){
     if( e.key === "Escape" )
       this.close.emit();
@@ -13,21 +13,22 @@ export class ChooseSeatComponent {
       this.result.emit(this.chosenSeat);
   }
 
+  @Input() seatsNumber : number;
+
   @Output() close = new EventEmitter<any>();
   @Output() result = new EventEmitter<number>();
 
   isClickedInside : boolean = false;
   chosenSeat : number = null;
 
-  seatsNumber : number = 150;
 
-  seatsDisabled : number[] = [1, 3, 11, 12, 13,  15, 16, 34, 35, 40, 41];
+  seatsDisabled : number[] = [1, 3, 11, 12, 13, 15, 16, 34, 35, 40, 41];
   rows : number[] = [];
   onerow: number[] = [];
 
-  constructor() {
+  ngOnInit() {
     this.onerow = [1, 2, 3, 4, 5];
-    this.rows = Array(this.seatsNumber / 5).fill(0).map((x,i)=>i);      
+    this.rows = Array( this.seatsNumber / 5 ).fill(0).map((x,i)=>i);      
   }
 
   onChoose( seat : number ) {

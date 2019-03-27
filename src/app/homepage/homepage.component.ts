@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { AuthService } from '../auth.service';
+import { SearchService } from '../search.service';
 
 
 @Component({
@@ -10,11 +10,13 @@ import { AuthService } from '../auth.service';
 })
 export class HomepageComponent {
 
-  constructor( private auth : AuthService ) {  }
+  constructor( private search : SearchService) {  }
 
   onSearch(form : NgForm) {
-    console.log(form);
-    this.auth.fetchUserData();
+    // if (form.valid) {
+      this.search.request = JSON.parse(JSON.stringify(form.value));
+      this.search.fetch();
+    // }
   }
 
 }
