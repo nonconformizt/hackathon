@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../../search.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-tickets-search',
@@ -10,11 +11,19 @@ export class TicketsSearchComponent implements OnInit {
 
   tickets: any[] = [];
 
-  constructor(private search: SearchService) { }
+  constructor(
+    private search: SearchService,
+    private title: Title
+    ) { 
+      this.title.setTitle("Поиск билетов | COSMOPORT");
+    }
 
   ngOnInit() {
-    // this.tickets = this.search.response.results;
-    this.tickets = (JSON.parse('{"response_code":1,"response_comment":"","results":[{"flight_id":"3","departure_time":"1","arrival_time":"1753689023","price":"1500","spaceship":{"model_name":"U-72","free_places":150},"way":[{"planet_name":"Мерсенн","port_name":{"port_name":"Q-63"}},{"planet_name":"Посидоний","port_name":{"port_name":"A-41"}}]},{"flight_id":"4","departure_time":"1","arrival_time":"1753689023","price":"2700","spaceship":{"model_name":"B-67","free_places":150},"way":[{"planet_name":"Посидоний","port_name":{"port_name":"C-72"}},{"planet_name":"Тихо","port_name":{"port_name":"X-35"}}]},{"flight_id":"5","departure_time":"1","arrival_time":"1753689023","price":"5000","spaceship":{"model_name":"B-67","free_places":150},"way":[{"planet_name":"Посидоний","port_name":{"port_name":"A-41"}},{"planet_name":"Пико","port_name":{"port_name":"R-30"}}]}]}')).results;
+
+    // this.search.fetch();
+
+    this.tickets = this.search.response.results;
+    
     this.tickets.forEach(ticket => {
       const arr = new Date(ticket.arrival_time * 1000);
       const dep = new Date(ticket.departure_time * 1000);

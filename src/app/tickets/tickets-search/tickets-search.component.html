@@ -1,6 +1,13 @@
 <div class="container">
   <div class="row">
 
+    <!-- ??????? -->
+    <div *ngIf="tickets.length === 0" class="col-md-10 offset-md-1 if_empty">
+      <i class="fal fa-times-circle"></i>
+      <h1>Ничего не найдено.</h1>
+      <h2>Попробуйте ввести другой диапазон дат</h2>
+    </div>
+
     <div *ngFor="let ticket of tickets" class="col-md-10 offset-md-1 ticket_outer">
       <div class="ticket_container">
         <div class="ticket row">

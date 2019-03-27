@@ -14,8 +14,9 @@ export class AuthService {
 
   token : string;
 
-  host: string = "http://ag.p-host.in";
+  // host: string = "http://ag.p-host.in";
   // host: string = "http://192.168.1.13";
+  host: string = "http://cosmoport.mcdir.ru";
 
   constructor( private http: HttpClient,
                private userdata: UserDataService,

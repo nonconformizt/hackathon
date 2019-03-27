@@ -20,6 +20,8 @@ export class SearchService {
   fetch() {
     this.auth.sendRequest('post', 'flight', 'find', this.request, (resp) => {
       this.response = resp;
+      console.log(resp);
+      
       this.router.navigate(['/tickets']);
     });
   }
