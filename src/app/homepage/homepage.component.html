@@ -1,13 +1,14 @@
 
 
-<div class="homepage_wrap">
+<form #f="ngForm" (ngSubmit)="onSearch(f)" class="homepage_wrap">
     <div class="hero">
         <div class="big_logo">COSMOPORT</div>
         <div class="slogan">Как тебе такое, Илон Маск?</div>
     </div>
-    <form class="find_tickets">
+    <div class="find_tickets" >
         <div class="inp_container">
-            <input 
+            <input
+                ngModel
                 type="text" 
                 name="from" 
                 id="from" 
@@ -15,7 +16,8 @@
                 placeholder="Откуда">
         </div>
         <div class="inp_container">
-            <input 
+            <input
+                ngModel
                 type="text" 
                 name="to"
                 id="to"
@@ -23,7 +25,8 @@
                 placeholder="Куда">
         </div>
         <div class="inp_container">
-            <input 
+            <input
+                ngModel
                 type="text" 
                 name="departure" 
                 id="departure" 
@@ -32,7 +35,8 @@
             <i class="fal fa-calendar"></i>
         </div>
         <div class="inp_container">
-            <input 
+            <input
+                ngModel
                 type="text" 
                 name="arrival" 
                 id="arrival" 
@@ -40,6 +44,6 @@
                 placeholder="Обратно">
             <i class="fal fa-calendar"></i>
         </div>
-    </form>
+    </div>
     <button class="go" type="submit">Найти билеты <i class="fal fa-space-shuttle"></i></button>
-</div>
+</form>

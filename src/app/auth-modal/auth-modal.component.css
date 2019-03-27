@@ -36,6 +36,9 @@
     border-radius: 16px;
 }
 
+.input.ng-touched:not(.ng-valid) {
+    border-color: red;
+}
 
 
 .submit {

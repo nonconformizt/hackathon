@@ -14,7 +14,7 @@ import { AuthModalComponent } from './auth-modal/auth-modal.component';
 import { CookieService } from "ngx-cookie-service";
 import { AuthService } from './auth.service';
 import { UserDataService } from './userdata.service';
-import { TicketPageComponent } from './tickets/ticket-page/ticket-page.component';
+import { RoutePageComponent } from './tickets/route-page/route-page.component';
 import { TicketsSearchComponent } from './tickets/tickets-search/tickets-search.component';
 import { ChooseSeatComponent } from './tickets/choose-seat/choose-seat.component';
 import { SeatComponent } from './tickets/choose-seat/seat/seat.component';
@@ -28,7 +28,7 @@ import { SeatComponent } from './tickets/choose-seat/seat/seat.component';
     HeaderButtonsComponent,
     AuthModalComponent,
     TicketsSearchComponent,
-    TicketPageComponent,
+    RoutePageComponent,
     ChooseSeatComponent,
     SeatComponent
   ],

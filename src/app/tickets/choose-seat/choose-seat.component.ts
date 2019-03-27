@@ -10,7 +10,7 @@ export class ChooseSeatComponent {
     if( e.key === "Escape" )
       this.close.emit();
     else if ( e.key === "Enter" && this.chosenSeat !== null )
-      this.close.emit(this.chosenSeat);
+      this.result.emit(this.chosenSeat);
   }
 
   @Output() close = new EventEmitter<any>();
@@ -19,7 +19,7 @@ export class ChooseSeatComponent {
   isClickedInside : boolean = false;
   chosenSeat : number = null;
 
-  seatsNumber : number = 45;
+  seatsNumber : number = 150;
 
   seatsDisabled : number[] = [1, 3, 11, 12, 13,  15, 16, 34, 35, 40, 41];
   rows : number[] = [];
@@ -31,17 +31,16 @@ export class ChooseSeatComponent {
   }
 
   onChoose( seat : number ) {
-
     if (seat === this.chosenSeat)
       this.chosenSeat = null;
     else
       this.chosenSeat = seat;
-
-    console.warn(this.chosenSeat);
-
   }
 
-
+  onSubmit() {
+    if ( this.chosenSeat !== null )
+      this.result.emit(this.chosenSeat);
+  }
 
 
 

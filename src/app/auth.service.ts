@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { CookieService } from "ngx-cookie-service";
 import { UserDataService } from './userdata.service';
@@ -14,7 +14,8 @@ export class AuthService {
 
   token : string;
 
-  host: string = "http://192.168.43.102";
+  // host: string = "http://ag.p-host.in";
+  host: string = "http://192.168.1.13";
 
   constructor( private http: HttpClient,
                private userdata: UserDataService,
@@ -77,7 +78,16 @@ export class AuthService {
 
   sendRequest(method : string, module : string, action : string, data : any, callback? : Function)
   {
+    // const config = {
+    //   headers: new HttpHeaders({
+    //     'Content-Type':  'application/json',
+    //     'Accept':  'application/json'
+    //   })
+    // };
+    console.log(data);
+
     const sesskey = this.cookie.get('token');
+    
     this.http[method]( this.host + '/' + module + '/' + action + '/?sesskey=' + sesskey, data)
         .subscribe(
           (response : any) => {

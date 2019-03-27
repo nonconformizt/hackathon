@@ -20,13 +20,31 @@ export class AuthModalComponent {
 
   constructor( public auth : AuthService ) {}
 
-  onLogInSubmit(form : NgForm) {
-    this.auth.login(form.value);
+  onLogInSubmit(form : NgForm) {  
+    if (form.valid)  
+      this.auth.login(form.value);
   }
 
   onRegisterSubmit(form : NgForm) {
-    this.auth.register(form.value);
+    if(form.valid)
+      this.auth.register(form.value);
   }
 
+  /**
+   *    Exit by clicking on overlay feature
+   */
+
+  isClickedInside : boolean = false;
+
+  onClickInside() {
+    this.isClickedInside = true;
+  }
+
+  onClickOutside() {
+    if(!this.isClickedInside)
+      this.auth.cancel();
+
+    this.isClickedInside = false;
+  }
 
 }
