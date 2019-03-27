@@ -52,17 +52,7 @@
     padding-right: 40px;
 }
 
-.seat {
-    border: 2px solid #a759c0;
-    width: 15px;
-    height: 15px;
-    margin: 2px;
-}
-.seat.inactive {
-    border-color: #ccc;
-}
-
-.seat:nth-child(2) {
+app-seat:nth-child(2) {
     margin-bottom: 15px;
 }
 
@@ -76,6 +66,7 @@
     position: absolute;
     right: 30px;
     top: 15px;
+    font-size: 15px;
 }
 
 .chosen span {

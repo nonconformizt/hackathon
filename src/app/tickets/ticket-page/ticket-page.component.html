@@ -1,4 +1,9 @@
-<app-choose-seat *ngIf="chooseSeatOpened"></app-choose-seat>
+
+
+<app-choose-seat 
+  *ngIf="chooseSeatOpened" 
+  (close)="chooseSeatOpened = false"
+  (result)="onResult($event)"></app-choose-seat>
 
 <div class="container">
   <div class="row">
@@ -22,8 +27,15 @@
           <div class="name">Falkon Ultra-heavy</div>
         </div>
         <div class="col-3 buttons">
-          <button class="choose_seat">Выбрать место <i class="fal fa-angle-down"></i></button>
+
+          <button 
+            class="choose_seat" 
+            (click)="onChooseSeat('llooongcomplexticketID')">
+              Выбрать место 
+              <i class="fal fa-angle-down"></i>
+          </button>
           <button class="choose_class">Класс: "Эконом"</button>
+
         </div>
       </div>
 

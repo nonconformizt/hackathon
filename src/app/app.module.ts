@@ -17,6 +17,7 @@ import { UserDataService } from './userdata.service';
 import { TicketPageComponent } from './tickets/ticket-page/ticket-page.component';
 import { TicketsSearchComponent } from './tickets/tickets-search/tickets-search.component';
 import { ChooseSeatComponent } from './tickets/choose-seat/choose-seat.component';
+import { SeatComponent } from './tickets/choose-seat/seat/seat.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ChooseSeatComponent } from './tickets/choose-seat/choose-seat.component
     AuthModalComponent,
     TicketsSearchComponent,
     TicketPageComponent,
-    ChooseSeatComponent
+    ChooseSeatComponent,
+    SeatComponent
   ],
   imports: [
     BrowserModule,

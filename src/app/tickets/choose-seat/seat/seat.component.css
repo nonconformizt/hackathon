@@ -1,0 +1,15 @@
+
+.seat {
+    border: 2px solid #a759c0;
+    width: 15px;
+    height: 15px;
+    margin: 2px;
+    cursor: pointer;
+}
+.seat.disabled {
+    border-color: #ccc;
+    cursor: not-allowed;
+}
+.seat.chosen {
+    background-color: #a759c0;
+}
