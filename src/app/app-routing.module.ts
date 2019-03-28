@@ -5,13 +5,15 @@ import { RoutePageComponent } from './tickets/route-page/route-page.component';
 import { TicketsSearchComponent } from './tickets/tickets-search/tickets-search.component';
 import { BuyTicketComponent } from './tickets/buy-ticket/buy-ticket.component';
 import { OfficeComponent } from './office/office.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path : '', pathMatch : 'full', component : HomepageComponent },
   { path : 'route/:id/buy/:seat', component : BuyTicketComponent },
   { path : 'route/:id', component : RoutePageComponent },
   { path : 'tickets', component : TicketsSearchComponent },
-  { path : 'office', component : OfficeComponent }
+  { path : 'office', component : OfficeComponent },
+  { path : 'admin', component : AdminComponent }
 ];
 
 @NgModule({

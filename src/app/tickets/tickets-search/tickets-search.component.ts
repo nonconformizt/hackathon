@@ -20,8 +20,6 @@ export class TicketsSearchComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.search.fetch();
-
     this.tickets = this.search.response.results;
     
     this.tickets.forEach(ticket => {
@@ -41,10 +39,10 @@ export class TicketsSearchComponent implements OnInit {
 
       ticket.duration = "";
       if (dur.getDay() > 0)
-        ticket.duration += dur.getDay().toString() + "д. ";
-      ticket.duration += dur.getHours().toString() + "час. ";
-      ticket.duration += dur.getHours().toString() + "мин.";
-
+        ticket.duration += dur.getDay().toString() + " д. ";
+      ticket.duration += dur.getHours().toString() + " час. ";
+      ticket.duration += dur.getHours().toString() + " мин.";
+      
     });
   }
 

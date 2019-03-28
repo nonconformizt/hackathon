@@ -1,0 +1,91 @@
+
+content {
+	width: 800px;
+	display: block;
+	margin: 0 auto;
+	padding-top: 30px;
+	padding-bottom: 100px;
+}
+
+content .section
+{
+	width: 700px;
+	margin: 0 auto;
+	padding: 20px;
+	background: #efefef;
+	border-radius: 3px;
+	border: 1px solid #dedcdc;
+	margin-bottom: 50px;
+}
+
+content .section .section_name
+{
+	font-size: 20px;
+	display: block;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+
+content .section .list_wrapper
+{
+	display: block;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #dedcdc;
+
+}
+
+content .section .list_wrapper .list_name
+{
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	display: block;
+	color: #683aa3;
+}
+
+content .section .list_wrapper .list_elem
+{
+	display: block;
+	margin-bottom: 30px;
+}
+
+content .section .list_wrapper .list_elem .text
+{
+	font-size: 13px;
+}
+
+content .section .list_wrapper .list_elem input
+{
+	display: block;
+	width: 300px;
+	height: 10px;
+	padding: 10px;
+	border-radius: 2px;
+	background: #efefef;
+	border: 2px solid #c5c2c2;
+	margin-top: 10px;
+	outline: none;
+}
+
+content .section .list_wrapper .list_elem button
+{
+	width: 150px;
+	height: 35px;
+	border: 3px solid #422863;
+	border-radius: 3px;
+	margin-top: 10px;
+	color: white;
+	background: #683aa3;
+	font-family: sans-serif;
+	font-weight: bold;
+	outline: none;
+
+}
+
+content .section .list_wrapper .list_elem button:hover
+{
+	opacity: 0.8;
+	cursor: pointer;
+}

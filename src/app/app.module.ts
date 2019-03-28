@@ -21,6 +21,7 @@ import { ChooseSeatComponent } from './tickets/choose-seat/choose-seat.component
 import { SeatComponent } from './tickets/choose-seat/seat/seat.component';
 import { BuyTicketComponent } from './tickets/buy-ticket/buy-ticket.component';
 import { OfficeComponent } from './office/office.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { OfficeComponent } from './office/office.component';
     ChooseSeatComponent,
     SeatComponent,
     BuyTicketComponent,
-    OfficeComponent
+    OfficeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

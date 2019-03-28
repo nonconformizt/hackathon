@@ -48,4 +48,10 @@
         </div>
     </div>
     <button class="go" type="submit">Найти билеты <i class="fal fa-space-shuttle"></i></button>
+
+    <div class="offer">
+        <button [routerLink]="['route', luck_id]"class="best"><i class="fal fa-star"></i> Лучший маршрут</button>
+        <button *ngIf="auth.loggedIn" [routerLink]="['route', best_id]" class="best"><i class="fal fa-calendar-check"></i> Мне повезёт!</button>
+    </div>
+
 </form>

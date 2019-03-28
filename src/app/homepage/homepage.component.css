@@ -136,6 +136,36 @@ button.go:hover:after {
 }
 
 
+
+.offer {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.best {
+    background: transparent;
+    border: 1.5px solid #fff;
+    padding: 10px 20px 10px 40px;
+    border-radius: 8px;
+    margin-top: 10px;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: 200ms;
+}
+.best i {
+    position: absolute;
+    left: 10px;
+    color: #fff;
+}
+.best:hover {
+    background: #ffffff33;
+}
+
+
 @media (max-width : 1100px) {
     button.go {
         background-color: #a759c0;

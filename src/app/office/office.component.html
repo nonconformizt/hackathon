@@ -10,12 +10,20 @@
           <button class="edit">Редактировать</button>
           <hr>
           <div class="balance">Баланс: <b>{{ user.balance + ' $' }}</b></div>
+          <div class="balance">Зарегистрирован: <b>{{ user.reg_date }}</b></div>
         </div>
       </div>
     </div>
     <div class="col-md-9 tickets_container">
-      <!-- <div *ngFor="let ticket of tickets" class="col-md-10 offset-md-1 ticket_outer">
-        <div class="ticket_container">
+
+      <div *ngIf="tickets.length === 0" class="col-md-10 offset-md-1 if_empty">
+        <i class="fal fa-times-circle"></i>
+        <h1>Еще нет билетов</h1>
+        <h2>Перейдите к поиску и купите свой первый билет</h2>
+      </div>
+
+      <div *ngFor="let ticket of tickets" class="col-md-10 offset-md-1 ticket_outer">
+        <div [routerLink]="['/', 'route', ticket.flight_id]" class="ticket_container">
           <div class="ticket row">
             <div class="date departure">
               <div class="day">{{ ticket.departure.date }}</div>
@@ -28,7 +36,7 @@
               </div>
             </div>
             <div class="info">
-              <div class="duration">2 д., 16 час., 18 мин.</div>
+              <div class="duration">{{ ticket.duration }}</div>
               <div class="arrow">
                 <img src="/assets/images/design/triangle.png">
               </div>
@@ -45,12 +53,8 @@
               </div>
             </div>
           </div>
-          <div class="btn_container row">
-            <a [routerLink]="['/', 'route', ticket.flight_id]" class="order col-md-3 offset-md-9 col-12">Заказать <i
-                class="fal fa-space-shuttle"></i></a>
-          </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </div>
