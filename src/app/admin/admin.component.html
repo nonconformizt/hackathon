@@ -1,68 +1,89 @@
-<content>
-  <div class="section">
-    <span class="section_name">Корабли</span>
-    <div class="list_wrapper">
-      <span class="list_name">Доступные модели</span>
-      <div class="list_elem">
-        <span class="text">Номер модели: <b>1</b></span>
-        <span class="text">Название модели: <b>U-77</b></span>
-        <span class="text">Места: <b>150</b></span>
-        <span class="text">Скорость: <b>3.7 км/с</b></span>
+
+<div class="container">
+  <div class="row">
+
+    <content class="col-12">
+      <div class="section">
+        <span class="section_name">Корабли</span>
+        <div class="list_wrapper">
+          <span class="list_name">Доступные модели</span>
+    
+          <div *ngFor="let ship of models" class="list_elem">
+            <span class="text">Номер модели: <b>{{ ship.id }} </b></span>
+            <span class="text">Название модели: <b>{{ ship.name }} </b></span>
+            <span class="text">Места: <b>{{ ship.max_places }} </b> </span>
+            <span class="text">Скорость: <b>{{ ship.speed }} км/с </b></span>
+          </div>
+    
+          <span class="list_name">Корабли</span>
+    
+          <div *ngFor="let ship of ships" class="list_elem">
+            <span class="text">Номер борта: <b>{{ ship.id }} </b></span>
+            <span class="text">Номер модели: <b>{{ ship.model_id }} </b></span>
+            <span class="text">Занято мест: <b>{{ ship.reserved_places }} </b></span>
+          </div>
+          <span class="list_name">Добавить корабль</span>
+
+          <form #addship="ngForm" (ngSubmit)="onAddShip(addship)" class="list_elem">
+            <input ngModel required name="model_id" type="text" placeholder="ID модели">
+            <button type="submit">Добавить</button>
+          </form>
+
+          <span class="list_name">Удалить корабль</span>
+          <form #deleteship="ngForm" (ngSubmit)="onDeleteShip(deleteship)" class="list_elem">
+            <input ngModel required name="ship_id" type="text" placeholder="ID корабля">
+            <button type="submit">Удалить</button>
+          </form>
+        </div>
       </div>
-      <span class="list_name">Корабли</span>
-      <div class="list_elem">
-        <span class="text">Номер борта: <b>1</b></span>
-        <span class="text">Номер модели: <b>1</b></span>
-        <span class="text">Занято мест: <b>32</b></span>
+    
+      <div class="section">
+    
+        <span class="section_name">Полеты</span>
+    
+        <div class="list_wrapper">
+    
+          <span class="list_name">Полеты</span>
+    
+          <div *ngFor="let flight of flights" class="list_elem">
+            <span class="text">Номер: <b>{{ flight.id }} </b></span>
+            <span class="text">Откуда: <b>{{ flight.from_planet }} </b></span>
+            <span class="text">Куда: <b>{{ flight.to_planet }} </b></span>
+            <span class="text">Отправление: <b>{{ flight.arrival_time }} </b></span>
+            <span class="text">Прибытие: <b>{{ flight.departure_time }} </b></span>
+            <span class="text">Активен: <b>{{ flight.flag_active === "1" ? "Да" : "Нет" }}</b></span>
+          </div>
+    
+          <span class="list_name">Билеты</span>
+    
+          <div *ngFor="let ticket of tickets" class="list_elem">
+            <span class="text">Номер билета: <b>{{ ticket.id }} </b></span>
+            <span class="text">Номер полета: <b>{{ ticket.flight_id }} </b></span>
+            <span class="text">Место: <b>{{ ticket.place_id }} </b></span>
+            <span class="text">Пользователь: <b>{{ ticket.user_id }} </b></span>
+            <span class="text">ID: <b>{{ ticket.unic_id }} </b></span>
+          </div>
+    
+          <span class="list_name">Добавить полет</span>
+    
+          <form #addFlight="ngForm" (ngSubmit)="onAddFlight(addFlight)" class="list_elem">
+            <input ngModel required name="way" type="text" placeholder="Маршрут JSON">
+            <input ngModel required name="dep_time" type="text" placeholder="Дата отправления (в формате 10-11-2012 13:14 )">
+            <input ngModel required name="spaceship" type="text" placeholder="ID корабля">
+            <button type="submit">Добавить</button>
+          </form>
+        </div>
       </div>
-      <span class="list_name">Добавить корабль</span>
-      <div class="list_elem">
-        <input type="text" placeholder="ID модели">
-        <button>Добавить</button>
+      <div class="section">
+        <span class="section_name">Опасная зона</span>
+        <div class="list_wrapper">
+          <span class="list_name">Сброс системы</span>
+          <div class="list_elem">
+            <button (click)="onReset()">Сбросить</button>
+          </div>
+        </div>
       </div>
-      <span class="list_name">Удалить корабль</span>
-      <div class="list_elem">
-        <input type="text" placeholder="ID корабля">
-        <button>Добавить</button>
-      </div>
-    </div>
+    </content>
+
   </div>
-  <div class="section">
-    <span class="section_name">Полеты</span>
-    <div class="list_wrapper">
-      <span class="list_name">Полеты</span>
-      <div class="list_elem">
-        <span class="text">Номер полета: <b>1</b></span>
-        <span class="text">От куда: <b>Коперник</b></span>
-        <span class="text">Куда: <b>Луна</b></span>
-        <span class="text">Отправление: <b>23:00 12.01</b></span>
-        <span class="text">Прибытие: <b>02:00 13.01</b></span>
-        <span class="text">Активен: <b>Да</b></span>
-      </div>
-      <span class="list_name">Билеты</span>
-      <div class="list_elem">
-        <span class="text">Номер билета: <b>1</b></span>
-        <span class="text">Номер полета: <b>1</b></span>
-        <span class="text">Место: <b>97</b></span>
-        <span class="text">Пользователь: <b>1</b></span>
-        <span class="text">Уникальный ID билета: <b>1-3-100-1553635112</b></span>
-      </div>
-      <span class="list_name">Добавить полет</span>
-      <div class="list_elem">
-        <input type="text" placeholder="Маршрут JSON">
-        <input type="text" placeholder="Дата отправления">
-        <input type="text" placeholder="ID корабля">
-        <button>Добавить</button>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <span class="section_name">Опасная зона</span>
-    <div class="list_wrapper">
-      <span class="list_name">Сброс системы</span>
-      <div class="list_elem">
-        <button>Сбросить</button>
-      </div>
-    </div>
-  </div>
-</content>
+</div>

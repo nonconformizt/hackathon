@@ -1,11 +1,10 @@
-
-<div (click) = "toggleDropdown()" class="header__user-section">
-    <div class="header__username">{{ name }}</div>
-    <div class="header__avatar"><img src="/assets/images/design/avatar.png" alt="Profile photo"></div>
+<div (click)="toggleDropdown()" class="header__user-section">
+  <div class="header__username">{{ name }}</div>
+  <div class="header__avatar"><img src="/assets/images/design/avatar.png" alt="Profile photo"></div>
 </div>
 
-<div [ngClass]="{hidden : !dropdownOpened}" class="header__dropdown" >
-  <div class="header__dropdown-item" style="font-weight: bold;">Пополнить баланс</div>
+<div [ngClass]="{hidden : !dropdownOpened}" class="header__dropdown">
+  <div class="header__dropdown-item" [routerLink]="['/payment']" style="font-weight: bold;">Пополнить баланс</div>
   <div class="header__dropdown-item">Мои билеты</div>
   <div class="header__dropdown-item" [routerLink]="['/office']">Личный кабинет</div>
   <div class="header__dropdown-item dropdown-logout">Выйти</div>

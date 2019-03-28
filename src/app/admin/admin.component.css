@@ -1,8 +1,5 @@
 
 content {
-	width: 800px;
-	display: block;
-	margin: 0 auto;
 	padding-top: 30px;
 	padding-bottom: 100px;
 }
@@ -11,11 +8,11 @@ content .section
 {
 	width: 700px;
 	margin: 0 auto;
-	padding: 20px;
-	background: #efefef;
 	border-radius: 3px;
-	border: 1px solid #dedcdc;
-	margin-bottom: 50px;
+    margin-bottom: 50px;
+    box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
 }
 
 content .section .section_name
@@ -88,4 +85,8 @@ content .section .list_wrapper .list_elem button:hover
 {
 	opacity: 0.8;
 	cursor: pointer;
+}
+
+b {
+    font-weight: bold;
 }

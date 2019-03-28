@@ -22,6 +22,7 @@ import { SeatComponent } from './tickets/choose-seat/seat/seat.component';
 import { BuyTicketComponent } from './tickets/buy-ticket/buy-ticket.component';
 import { OfficeComponent } from './office/office.component';
 import { AdminComponent } from './admin/admin.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AdminComponent } from './admin/admin.component';
     SeatComponent,
     BuyTicketComponent,
     OfficeComponent,
-    AdminComponent
+    AdminComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

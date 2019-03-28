@@ -27,17 +27,19 @@ export class HomepageComponent implements OnInit {
     this.auth.sendRequest('get', 'flight', 'best', {},
       (resp) => this.best_id = resp.flight_id
     )
-    // if (this.auth.loggedIn) {
-      this.auth.sendRequest('get', 'flight', 'luck', {},
-        (resp) => {if(resp.response_code !== -1)
-         this.luck_id = resp.flight_id;}
-      );
-    // }
+    this.auth.sendRequest('get', 'flight', 'luck', {},
+      (resp) => {
+        if (resp.response_code !== -1)
+          this.luck_id = resp.flight_id;
+      }
+    );
   }
-
 
   onSearch(form: NgForm) {
     if (form.valid) {
+      form.value.arrival_time = (new Date(form.value.arrival_time)).getTime() / 1000;
+      form.value.departure_time = (new Date(form.value.departure_time)).getTime() / 1000;
+
       this.search.request = JSON.parse(JSON.stringify(form.value));
       this.search.fetch();
     }

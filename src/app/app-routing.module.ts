@@ -6,6 +6,7 @@ import { TicketsSearchComponent } from './tickets/tickets-search/tickets-search.
 import { BuyTicketComponent } from './tickets/buy-ticket/buy-ticket.component';
 import { OfficeComponent } from './office/office.component';
 import { AdminComponent } from './admin/admin.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   { path : '', pathMatch : 'full', component : HomepageComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path : 'route/:id', component : RoutePageComponent },
   { path : 'tickets', component : TicketsSearchComponent },
   { path : 'office', component : OfficeComponent },
-  { path : 'admin', component : AdminComponent }
+  { path : 'admin', component : AdminComponent },
+  { path : 'payment', component : PaymentComponent }
 ];
 
 @NgModule({

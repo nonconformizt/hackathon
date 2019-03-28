@@ -44,6 +44,20 @@ export class RoutePageComponent implements OnInit {
     this.auth.sendRequest('put', 'flight', 'flight', { "flight_id": this.flightID }, (resp: any) => {
       this.flight = resp.flight_data;
       this.way = resp.flight_data.way;
+
+      const arr = new Date(resp.flight_data.arrival_time * 1000);
+      const dep = new Date(resp.flight_data.departure_time * 1000);
+
+      this.flight.arrival = {
+        hours: arr.getHours() < 10 ? '0' + arr.getHours().toString() : arr.getHours().toString(),
+        min: arr.getMinutes() < 10 ? '0' + arr.getMinutes().toString() : arr.getMinutes().toString(),
+        date: arr.getDay().toString() + " " + this.monthName(arr.getMonth()),
+      };
+      this.flight.departure = {
+        hours: dep.getHours() < 10 ? '0' + dep.getHours().toString() : dep.getHours().toString(),
+        min: dep.getMinutes() < 10 ? '0' + dep.getMinutes().toString() : dep.getMinutes().toString(),
+        date: dep.getDay().toString() + " " + this.monthName(dep.getMonth()),
+      };
     })
   }
 
@@ -83,7 +97,37 @@ export class RoutePageComponent implements OnInit {
         })
 
     }
+  }
 
+  monthName(n: number) {
+    switch (n) {
+      case 0:
+        return "января";
+      case 1:
+        return "февраля";
+      case 2:
+        return "марта";
+      case 3:
+        return "апреля";
+      case 4:
+        return "мая";
+      case 5:
+        return "июня";
+      case 6:
+        return "июля";
+      case 7:
+        return "августа";
+      case 8:
+        return "сентября";
+      case 9:
+        return "октября";
+      case 10:
+        return "ноября";
+      case 11:
+        return "декабря";
+      default:
+        return "";
+    }
   }
 
 }
