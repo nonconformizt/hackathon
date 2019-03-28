@@ -1,0 +1,25 @@
+.message {
+    box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+    padding: 15px;  
+    border-radius: 8px;
+    height: 250px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+}
+.message h1, .message h2, .message i {
+    color: #a759c0;
+    font-size: 30px;
+}
+.message h1 {
+    font-size: 35px;
+    margin: 15px 0;
+}
+.message i {
+    font-size: 60px;
+}
+.message h2 {
+    font-size: 18px;
+}

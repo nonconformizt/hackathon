@@ -3,9 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RoutePageComponent } from './tickets/route-page/route-page.component';
 import { TicketsSearchComponent } from './tickets/tickets-search/tickets-search.component';
+import { BuyTicketComponent } from './tickets/buy-ticket/buy-ticket.component';
 
 const routes: Routes = [
   { path : '', pathMatch : 'full', component : HomepageComponent },
+  { path : 'route/:id/buy/:seat', component : BuyTicketComponent },
   { path : 'route/:id', component : RoutePageComponent },
   { path : 'tickets', component : TicketsSearchComponent }
 ];

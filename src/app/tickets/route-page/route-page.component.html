@@ -2,7 +2,7 @@
   *ngIf="chooseSeatOpened" 
   (close)="chooseSeatOpened = false" 
   (result)="onResult($event)" 
-  [seatsNumber]="150">
+  [seatsNumber]="flight.spaceship_model.max_places">
 </app-choose-seat>
 
 <div class="container">
@@ -30,7 +30,7 @@
             <span class="port">{{ place.port_name }}</span>
           </div>
           <div *ngIf="i === 0" class="col-3 rocket">
-            <div class="name">{{ flight.spaceship_model.spaceship_name }}</div>
+            <div class="name">Корабль: {{ flight.spaceship_model.spaceship_name }}</div>
           </div>
           <div *ngIf="i === 0" class="col-3 buttons">
             <button class="choose_seat" (click)="chooseSeatOpened = true">
@@ -66,7 +66,7 @@
       </div>
 
 
-      <form>
+      <form (ngSubmit)="onBuyClick(buyform)" #buyform="ngForm">
         <div class="form_header" id="form">
           Заполните свои данные
         </div>
@@ -74,33 +74,33 @@
           <div class="row">
             <div class="col-md-6">
               <label for="last_name" class="label">Фамилия:</label>
-              <input type="text" name="last_name" id="last_name" class="input" [value]="first_name">
+              <input [ngModel]="last_name" required type="text" name="last_name" id="last_name" class="input">
             </div>
             <div class="col-md-6">
               <label for="first_name" class="label">Имя:</label>
-              <input type="text" name="first_name" id="first_name" class="input" [value]="last_name">
+              <input [ngModel]="first_name" required type="text" name="first_name" id="first_name" class="input">
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <label for="last_name" class="label">Дата рождения:</label>
-              <input type="text" name="last_name" id="last_name" class="input">
+              <label for="birth_year" class="label">Дата рождения:</label>
+              <input ngModel required type="text" name="birth_year" id="birth_year" class="input">
             </div>
             <div class="col-md-6">
               <label for="first_name" class="label">Пол:</label>
               <div class="radio">
                 <p>
-                  <input name="gender" type="radio" id="male" value="male">
-                  <label for="male"> Мужской</label>
+                  <input ngModel required name="gender" type="radio" id="male" value="male">
+                  <label for="male">Мужской</label>
                 </p>
                 <p>
-                  <input name="gender" type="radio" id="female" value="female">
-                  <label for="female"> Женский</label>
+                  <input ngModel required name="gender" type="radio" id="female" value="female">
+                  <label for="female">Женский</label>
                 </p>
               </div>
             </div>
           </div>
-
+          <div *ngIf="seatIsNotChosen" class="seat_not_chosen">Вы не выбрали место!</div>
         </div>
 
         <div class="row">
@@ -113,8 +113,9 @@
             </button>
           </div>
           <div class="col-3 offset-6">
-            <button class="further">
-              <div class="caption">
+            <button type="submit" class="further">
+              <!-- [routerLink]="['buy', '1']" -->
+              <div class="caption" >
                 Заказать
               </div>
               <i class="fal fa-angle-double-right"></i>

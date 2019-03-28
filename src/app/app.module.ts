@@ -19,6 +19,7 @@ import { RoutePageComponent } from './tickets/route-page/route-page.component';
 import { TicketsSearchComponent } from './tickets/tickets-search/tickets-search.component';
 import { ChooseSeatComponent } from './tickets/choose-seat/choose-seat.component';
 import { SeatComponent } from './tickets/choose-seat/seat/seat.component';
+import { BuyTicketComponent } from './tickets/buy-ticket/buy-ticket.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SeatComponent } from './tickets/choose-seat/seat/seat.component';
     TicketsSearchComponent,
     RoutePageComponent,
     ChooseSeatComponent,
-    SeatComponent
+    SeatComponent,
+    BuyTicketComponent
   ],
   imports: [
     BrowserModule,

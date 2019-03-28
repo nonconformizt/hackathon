@@ -180,6 +180,10 @@ form {
     cursor: pointer;
 }
 
+.input.ng-touched:not(.ng-valid) {
+    border-color: red;
+}
+
 
 .total {
     background: transparent;
@@ -259,4 +263,13 @@ form .further {
 .further.back:hover .caption {
     color: #fff;
     text-align: center;
+}
+
+.seat_not_chosen {
+    text-align: center;
+    margin: 30px 0 -20px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: red;
 }
