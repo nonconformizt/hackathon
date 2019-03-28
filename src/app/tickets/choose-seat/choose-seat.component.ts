@@ -14,6 +14,7 @@ export class ChooseSeatComponent implements OnInit {
   }
 
   @Input() seatsNumber : number;
+  @Input() seatsDisabled : number[];
 
   @Output() close = new EventEmitter<any>();
   @Output() result = new EventEmitter<number>();
@@ -22,13 +23,15 @@ export class ChooseSeatComponent implements OnInit {
   chosenSeat : number = null;
 
 
-  seatsDisabled : number[] = [1, 3, 11, 12, 13, 15, 16, 34, 35, 40, 41];
   rows : number[] = [];
   onerow: number[] = [];
 
   ngOnInit() {
     this.onerow = [1, 2, 3, 4, 5];
-    this.rows = Array( this.seatsNumber / 5 ).fill(0).map((x,i)=>i);      
+    this.rows = Array( this.seatsNumber / 5 ).fill(0).map((x,i)=>i);
+
+    console.warn(this.seatsDisabled);
+    
   }
 
   onChoose( seat : number ) {

@@ -1,0 +1,38 @@
+
+.container {
+    margin-top: 60px;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #dfdfdf;
+    margin: 0 auto;
+}
+
+.data_block {
+    max-width: 200px;
+    margin: 20px auto 0;
+}
+
+.first_name, .last_name {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.edit {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #303030;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 300ms;
+}
+.edit:hover {
+    background-color: #eee;
+    border-color: #eee;
+}

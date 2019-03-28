@@ -20,6 +20,7 @@ import { TicketsSearchComponent } from './tickets/tickets-search/tickets-search.
 import { ChooseSeatComponent } from './tickets/choose-seat/choose-seat.component';
 import { SeatComponent } from './tickets/choose-seat/seat/seat.component';
 import { BuyTicketComponent } from './tickets/buy-ticket/buy-ticket.component';
+import { OfficeComponent } from './office/office.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BuyTicketComponent } from './tickets/buy-ticket/buy-ticket.component';
     RoutePageComponent,
     ChooseSeatComponent,
     SeatComponent,
-    BuyTicketComponent
+    BuyTicketComponent,
+    OfficeComponent
   ],
   imports: [
     BrowserModule,

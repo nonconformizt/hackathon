@@ -2,7 +2,8 @@
   *ngIf="chooseSeatOpened" 
   (close)="chooseSeatOpened = false" 
   (result)="onResult($event)" 
-  [seatsNumber]="flight.spaceship_model.max_places">
+  [seatsNumber]="flight.spaceship_model.max_places"
+  [seatsDisabled]="flight.spaceship_model.places">
 </app-choose-seat>
 
 <div class="container">

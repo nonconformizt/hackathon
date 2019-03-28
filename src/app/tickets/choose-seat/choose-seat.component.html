@@ -10,7 +10,7 @@
 
             <app-seat
               *ngFor="let seat of onerow"
-              [disabled]="seatsDisabled.includes( 5*row + seat )"
+              [disabled]="seatsDisabled.includes(5*row + seat)"
               [id]="5 * row + seat"
               [chosen]="chosenSeat === 5*row + seat "
               (choose)="onChoose( 5*row + seat )"

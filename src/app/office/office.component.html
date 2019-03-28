@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 userdata_container">
+      <div class="avatar"></div>
+      <div class="data_block">
+        <div class="editable">
+          <div class="first_name">{{ user.first_name }}</div>
+          <div class="last_name">{{ user.last_name }}</div>
+          <div class="email">{{ user.mail }}</div>
+          <button class="edit">Редактировать</button>
+          <hr>
+          <div class="balance">Баланс: <b>{{ user.balance + ' $' }}</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 tickets_container">
+      <!-- <div *ngFor="let ticket of tickets" class="col-md-10 offset-md-1 ticket_outer">
+        <div class="ticket_container">
+          <div class="ticket row">
+            <div class="date departure">
+              <div class="day">{{ ticket.departure.date }}</div>
+              <div class="time"> {{ ticket.departure.hours }}:{{ ticket.departure.min }}
+              </div>
+              <div class="port">
+                {{ ticket.way[0].planet_name }}
+                ,
+                {{ ticket.way[0].port_name.port_name }}
+              </div>
+            </div>
+            <div class="info">
+              <div class="duration">2 д., 16 час., 18 мин.</div>
+              <div class="arrow">
+                <img src="/assets/images/design/triangle.png">
+              </div>
+              <div class="ship">Корабль: {{ ticket.spaceship.model_name }}</div>
+            </div>
+            <div class="date arrival">
+              <div class="day">{{ ticket.arrival.date }}</div>
+              <div class="time">
+                {{ ticket.arrival.hours }}:{{ ticket.arrival.min }}
+              </div>
+              <div class="port">
+                {{ ticket.way[ticket.way.length - 1].planet_name }},
+                {{ ticket.way[ticket.way.length - 1].port_name.port_name }}
+              </div>
+            </div>
+          </div>
+          <div class="btn_container row">
+            <a [routerLink]="['/', 'route', ticket.flight_id]" class="order col-md-3 offset-md-9 col-12">Заказать <i
+                class="fal fa-space-shuttle"></i></a>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
